@@ -8,12 +8,12 @@ $baseclass: 'app-bar';
   display: flex;
   align-items: center;
 
-  height: 14 * $rem-base;
+  height: 12 * $rem-base;
 
-  background: linear-gradient(180deg, $brand-black -30%, transparent);
+  background: linear-gradient(180deg, $brand-black 60%, transparent);
 
   h2, h3, h4, h5, h6 {
-    height: 2.25 * $rem-base;
+    height: 1.25 * $rem-base;
   }
 
   .logo {
@@ -44,19 +44,19 @@ $baseclass: 'app-bar';
 
   a {
     &:nth-child(1).active .button__bar--inner {
-      background: $brand-red;
+      background: $brand-black;
     }
 
     &:nth-child(2).active .button__bar--inner {
-      background: $brand-yellow;
+      background: $brand-black;
     }
 
     &:nth-child(3).active .button__bar--inner {
-      background: $brand-green;
+      background: $brand-black;
     }
 
     &:nth-child(4).active .button__bar--inner {
-      background: $brand-pink;
+      background: $brand-black;
     }
   }
 

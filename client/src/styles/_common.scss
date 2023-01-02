@@ -1,15 +1,17 @@
+$white-theme-baseclass: "theme--white";
+
 * {
 	box-sizing: border-box;
 }
 
 html {
-	background: $brand-black;
+	background: $brand-white;
 }
 
 
 body {
-	background: $brand-black;
-	color: $brand-white;
+	background: $brand-white;
+	color: $brand-black;
 
 	-webkit-overflow-scrolling: touch;
 

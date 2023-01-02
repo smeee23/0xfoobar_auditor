@@ -22,21 +22,19 @@ class Shapes extends Component {
         });
 
         const palette = {
-            brandRed: '#CE3232',
-            brandYellow: '#E0C723',
-            brandGreen: '#80CE32',
-            brandPink: '#D991BA',
-            brandBlue: '#3FA7D6'
+            //brandWhite: '#FFFFFF',
+            brandGrey: '#A8A8A8',
+            //brandYellow: '#4B0082',
+            //brandGreen: '#80CE32',
+            //brandRed: '#CE3232',
+            //brandPink: '#D991BA',
+            //brandBlue: '#3FA7D6'
         }
 
         const shapes = {
-            polygon1: { sides: 0, size: 100 },
-            rectangle1: { width: 175, height: 175 },
-            polygon2: { sides: 5, size: 155 },
-            polygon3: { sides: 6, size: 150 },
-            polygon4: { sides: 8, size: 175 },
-            rectangle2: { width: 200, height: 100 },
-            polygon5: { sides: 0, size: 150 },
+            //rectangle1: { width: 100, height: 200 },
+            //rectangle2: { width: 200, height: 200 },
+            rectangle2: { width: 1000, height: 400 },
         }
 
         const paletteKeys = Object.keys(palette);
@@ -60,7 +58,7 @@ class Shapes extends Component {
         engine.world.gravity.scale = 0.000005;
         engine.world.gravity.y = 0;
 
-        this.attractor = Matter.Bodies.circle(this.docWidth / 2, this.viewportHeight / 2, this.viewportHeight * 0.75, {
+        this.attractor = Matter.Bodies.circle(-this.docWidth / 1, - this.viewportHeight / 1, this.viewportHeight * 0.75, {
             isStatic: true,
             render: { fillStyle: 'transparent', strokeStyle: '#FFFFFF55', lineWidth: 0 },
             chamfer: { radius: this.viewportHeight * 0.33 },
@@ -69,14 +67,14 @@ class Shapes extends Component {
                 (bodyA, bodyB) => {
                   return {
                     x: (bodyA.position.x - bodyB.position.x) * 0.000005,
-                    y: (bodyA.position.y - bodyB.position.y) * 0.000005,
+                    y: (bodyA.position.y - bodyB.position.y) * 0.00001,
                   };
                 }
               ]
             }
         });
 
-        Matter.Body.scale(this.attractor, 1.25, 0.75);
+        Matter.Body.scale(this.attractor, 0.00001, 0.00001);
 
         World.add(engine.world, this.attractor);
 
@@ -84,7 +82,7 @@ class Shapes extends Component {
             const options = {
                 render: {
                     strokeStyle: palette[paletteKeys[(i + j) % paletteKeys.length]] + 'FF',
-                    lineWidth: 4,
+                    lineWidth: 10,
                     fillStyle: 'transparent'
                 },
                 chamfer: 32

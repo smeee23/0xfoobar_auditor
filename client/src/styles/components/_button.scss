@@ -20,13 +20,19 @@ $baseclass: 'button';
   &__bar--outer {
     width: 100%;
     height: $rem-base / 2;
-    // bottom: -($rem-base / 2);
-    // left: 0;
-    // position: absolute;
+  }
+
+  &__bar--inner-nav {
+    background: $brand-grey-dark;
+    width: 100%;
+    height: 100%;
+    transform: scale3d(1,1,1);
+		transform-origin: left;
+    transition: transform $easing2 $duration-medium;
   }
 
   &__bar--inner {
-    background: white;
+    background: $brand-black;
     width: 100%;
     height: 100%;
     transform: scale3d(1,1,1);
@@ -37,6 +43,20 @@ $baseclass: 'button';
   &__item {
     border: solid 2px;
     padding: ($rem-base * 2) ($rem-base * 3);
+    display: flex;
+    align-items: center;
+  }
+
+  &__itemsm {
+    border: solid 2px;
+    padding: ($rem-base * 1) ($rem-base * 1.5);
+    display: flex;
+    align-items: center;
+  }
+
+  &__itemxsm {
+    border: solid 2px;
+    padding: ($rem-base * .25) ($rem-base * 0.375);
     display: flex;
     align-items: center;
   }
@@ -87,7 +107,13 @@ $baseclass: 'button';
     }
   }
 
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
   &--text-link {
+    
     margin: 0 ($rem-base * 4);
 
     .#{$baseclass}__bar--inner {
@@ -99,6 +125,7 @@ $baseclass: 'button';
       border: none;
       padding-left: 0;
       padding-right: 0;
+      font-size: px-to-rem(21px);
     }
 
     &:hover {
@@ -118,5 +145,14 @@ $baseclass: 'button';
       transform: scale3d(1,1,1);
       transition: none;
     }
+  }
+}
+
+.#{$white-theme-baseclass} {
+  .#{$baseclass}__bar {
+    background: $brand-black;
+  }
+  .#{$baseclass}__bar--inner {
+    background: $brand-black;
   }
 }

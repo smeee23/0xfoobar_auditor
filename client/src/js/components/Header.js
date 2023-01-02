@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react";
 import { connect } from "react-redux"
 
 import Logo from "./Logo";
-import Button from "./Button";
+import {Button} from "./Button";
 import TextLink from "./TextLink";
 import { NavLink } from 'react-router-dom'
 import Takeover from "./Takeover";
@@ -13,17 +13,11 @@ class Header extends Component {
 
     const nav = (
       <Fragment>
-        <NavLink exact to={"/dashboard"}>
-          <TextLink text="Dashboard"/>
-        </NavLink>
-        <NavLink exact to={"/yourcause"}>
-          <TextLink text="Your Cause"/>
-        </NavLink>
-        <NavLink exact to={"/contributions"}>
-          <TextLink text="Contributions"/>
+        <NavLink exact to={"/audits"}>
+          <TextLink text="Security Audits"/>
         </NavLink>
         <NavLink exact to={"/"}>
-          <TextLink text="How it works"/>
+          <TextLink text="Home"/>
         </NavLink>
       </Fragment>
     )
@@ -33,12 +27,11 @@ class Header extends Component {
           { nav }
         </Takeover>
         <NavLink exact to={"/"} className="app-bar__left tdn">
-          <Logo/>
-          <h2 className="mb0">JustCause</h2>
+					<img style={{height: "40px"}} src={require("../components/images/0xfoobar_white.png")} alt={"logo"}/>
+            <p style={{fontSize:21}}  className="mb0">0xfoobar</p>
         </NavLink>
         <nav className="app-bar__items">
           { nav }
-          <Button text={isMobile ? null : "Connect"} icon={"wallet"}/>
         </nav>
       </header>
 		);

@@ -2,7 +2,7 @@ $baseclass: 'card';
 
 .#{$baseclass} {
   position: relative;
-  width: 100%;
+  width: 300px;
   margin-bottom: 3 * $rem-base;
 
   &__header, &__bar, &__body {
@@ -19,9 +19,9 @@ $baseclass: 'card';
 
   &__header {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: (10 * $rem-base);
+    width: 100%;
+    height: 200px;
+    text-align: center;
   }
 
   &__body {
@@ -68,7 +68,7 @@ $baseclass: 'card';
   &__bar {
     height: $rem-base;
     width: 100%;
-    background: $brand-white;
+    background: $brand-black;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
